@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <React/RCTRootView.h>
 
 @interface ViewController ()
 
@@ -26,4 +27,14 @@
 }
 
 
+- (IBAction)onClickRCTWebViewButton:(id)sender {
+    
+    NSString *urlStr = @"http://localhost:8081/index.ios.js";
+    
+//    RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:<#(NSURL *)#> moduleName:<#(NSString *)#> initialProperties:<#(NSDictionary *)#> launchOptions:<#(NSDictionary *)#>]
+    
+}
+
+    
+    
 @end
