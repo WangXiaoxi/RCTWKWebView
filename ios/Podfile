@@ -11,8 +11,12 @@ target 'MyWKWebView' do
     'DevSupport',
     'RCTText',
     'RCTNetwork',
-    'RCTWebSocket'
+    'RCTWebSocket',
+    'RCTImage',
   ]
 
   pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  
+  pod 'react-native-wkwebview', :path => '../node_modules/react-native-wkwebview-reborn'
+  
 end

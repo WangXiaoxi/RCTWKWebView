@@ -20,21 +20,35 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
 - (IBAction)onClickRCTWebViewButton:(id)sender {
     
-    NSString *urlStr = @"http://localhost:8081/index.ios.js";
+    NSString *urlStr = @"http://localhost:8081/index.ios.bundle?platform=ios";
     
-//    RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:<#(NSURL *)#> moduleName:<#(NSString *)#> initialProperties:<#(NSDictionary *)#> launchOptions:<#(NSDictionary *)#>]
-    
+    RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:[NSURL URLWithString:urlStr]
+                                                        moduleName:@"MyHelloWKWebViewApp"
+                                                 initialProperties:@{
+                                                                     @"scores" : @[
+                                                                             @{
+                                                                                 @"name" : @"Alex",
+                                                                                 @"value": @"42"
+                                                                                 },
+                                                                             @{
+                                                                                 @"name" : @"Joel",
+                                                                                 @"value": @"10"
+                                                                                 }
+                                                                             ]
+                                                                     }
+                                                     launchOptions:nil];
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view = rootView;
+    [self presentViewController:vc
+                       animated:YES
+                     completion:nil];
 }
 
-    
-    
 @end
